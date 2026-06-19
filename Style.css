@@ -34,3 +34,12 @@ body{
 body.dark{
     background:#020617;
 }
+
+.container{
+    width:100%;
+    max-width:950px;
+}
+
+.hidden{
+    display:none;
+}
