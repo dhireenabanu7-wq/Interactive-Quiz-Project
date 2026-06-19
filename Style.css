@@ -198,3 +198,9 @@ input::placeholder{
     padding:6px 12px;
     border-radius:25px;
 }
+
+canvas{
+    margin-top:30px;
+    background:white;
+    border-radius:18px;
+}
