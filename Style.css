@@ -110,3 +110,15 @@ input::placeholder{
     transform:translateY(-4px);
     background:rgba(255,255,255,0.25);
 }
+
+.selected-category,
+.selected-difficulty{
+    background:linear-gradient(
+        135deg,
+        #00c6ff,
+        #0072ff
+    );
+
+    box-shadow:
+    0 0 15px rgba(0,114,255,.7);
+}
