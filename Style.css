@@ -122,3 +122,19 @@ input::placeholder{
     box-shadow:
     0 0 15px rgba(0,114,255,.7);
 }
+
+.primary-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:700;
+    color:white;
+    background:linear-gradient(
+        135deg,
+        #ff9966,
+        #ff5e62
+    );
+}
