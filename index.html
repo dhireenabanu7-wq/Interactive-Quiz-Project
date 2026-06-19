@@ -1,159 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz Master Pro</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Quiz Master Pro</title>
 
-<script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
 </head>
+
 <body>
-    <div class="container"></div>
 
-    <div id="homeScreen"></div>
+    <div class="container">
 
-    <h1>🧠 Quiz Master Pro</h1>
+        <!-- Home Screen -->
+        <div id="homeScreen">
 
-    <p class="subtitle">
-        Challenge yourself and become a Quiz Legend
-    </p>
+            <h1>🧠 Quiz Master Pro</h1>
 
-    <input type="text" id="playerName" placeholder="Enter Your Name">
+            <p class="subtitle">
+                Challenge yourself and become a Quiz Legend
+            </p>
 
-    <h3>Select Category</h3>
+            <input
+                type="text"
+                id="playerName"
+                placeholder="Enter Your Name"
+            >
 
-    <div class="category-grid">
+            <h3>Select Category</h3>
 
-    <button class="category">
-    JavaScript
-    </button>
+            <div class="category-grid">
 
-    <button class="category">
-    HTML & CSS
-    </button>
+                <button class="category">
+                    JavaScript
+                </button>
 
-    <button class="category">
-    Java
-    </button>
+                <button class="category">
+                    HTML & CSS
+                </button>
 
-    <button class="category">
-    General Knowledge
-    </button>
+                <button class="category">
+                    Java
+                </button>
 
-    </div>
+                <button class="category">
+                    General Knowledge
+                </button>
 
-    <h3>Select Difficulty</h3>
+            </div>
 
-    <div class="difficulty-grid">
+            <h3>Select Difficulty</h3>
 
-    <button class="difficulty">
-    Easy
-    </button>
+            <div class="difficulty-grid">
 
-    <button class="difficulty">
-    Medium
-    </button>
+                <button class="difficulty">
+                    Easy
+                </button>
 
-    <button class="difficulty">
-    Hard
-    </button>
+                <button class="difficulty">
+                    Medium
+                </button>
 
-    </div>
+                <button class="difficulty">
+                    Hard
+                </button>
 
-    <button id="startQuizBtn">
-    Start Quiz 🚀
-    </button>
-    
-    <div id="quizScreen" class="hidden"></div>
+            </div>
 
-    <div class="quiz-top">
+            <button id="startQuizBtn">
+                Start Quiz 🚀
+            </button>
 
-    <div id="welcomeUser"></div>
+        </div>
 
-        <div id="timer">
-        ⏱ 15
+        <!-- Quiz Screen -->
+        <div id="quizScreen" class="hidden">
+
+            <div class="quiz-top">
+
+                <div id="welcomeUser"></div>
+
+                <div id="timer">
+                    ⏱ 15
+                </div>
+
+            </div>
+
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+
+            <div class="question-info">
+
+                <span id="questionCounter"></span>
+
+                <span id="scoreCounter">
+                    Score: 0
+                </span>
+
+            </div>
+
+            <h2 id="question"></h2>
+
+            <div id="options"></div>
+
+            <button id="nextBtn">
+                Next Question →
+            </button>
+
+            <h3>Question Navigator</h3>
+
+            <div id="navigator"></div>
+
+        </div>
+
+        <!-- Result Screen -->
+        <div id="resultScreen" class="hidden">
+
+            <div class="result-grid">
+
+                <div class="stat-card">
+                    <h2 id="finalScore"></h2>
+                </div>
+
+                <div class="stat-card">
+                    <h2 id="accuracy"></h2>
+                </div>
+
+                <div class="stat-card">
+                    <h2 id="rank"></h2>
+                </div>
+
+                <div class="stat-card">
+                    <h2 id="avgTime"></h2>
+                </div>
+
+            </div>
+
+            <div id="achievementBox">
+
+                <h2>Achievements</h2>
+
+                <div id="achievements"></div>
+
+            </div>
+
+            <canvas id="resultChart"></canvas>
+
+            <button id="restartBtn">
+                Start New Quiz
+            </button>
+
+            <div class="leaderboard">
+
+                <h2>🏅 Leaderboard</h2>
+
+                <ul id="leaderboardList"></ul>
+
+            </div>
+
         </div>
 
     </div>
 
-    <div class="progress-container">
-    <div id="progressBar"></div>
-    </div>
-
-    <div class="question-info">
-
-    <span id="questionCounter"></span>
-
-    <span id="scoreCounter">
-    Score: 0
-    </span>
-
-    </div>
-
-    <h2 id="question"></h2>
-
-    <div id="options"></div>
-
-    <button id="nextBtn">
-    Next Question →
-    </button>
-
-    <h3>Question Navigator</h3>
-
-    <div id="navigator"></div>
-
-    <div id="resultScreen" class="hidden">
-
-    </div>
-
-    <div class="result-grid">
-
-    <div class="stat-card">
-    <h2 id="finalScore"></h2>
-    </div>
-
-    <div class="stat-card">
-    <h2 id="accuracy"></h2>
-    </div>
-
-    <div class="stat-card">
-    <h2 id="rank"></h2>
-    </div>
-
-    <div class="stat-card">
-    <h2 id="avgTime"></h2>
-    </div>
-
-    </div>
-
-    <div id="achievementBox">
-
-    <h2>Achievements</h2>
-
-    <div id="achievements"></div>
-
-    </div>
-
-    <canvas id="resultChart"></canvas>
-
-    <button id="restartBtn">
-    Start New Quiz
-    </button>
-
-    <div class="leaderboard">
-
-    <h2>🏅 Leaderboard</h2>
-
-    <ul id="leaderboardList"></ul>
-
-    </div>
-
+    <!-- Theme Toggle -->
     <button id="themeToggle">
-    🌙
+        🌙
     </button>
 
 </body>
+
 </html>
