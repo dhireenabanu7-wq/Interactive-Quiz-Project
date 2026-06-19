@@ -179,3 +179,10 @@ input::placeholder{
     border-radius:16px;
     cursor:pointer;
 }
+
+.navigator{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(45px,1fr));
+    gap:10px;
+}
