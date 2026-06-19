@@ -204,3 +204,9 @@ canvas{
     background:white;
     border-radius:18px;
 }
+
+.theme-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+}
