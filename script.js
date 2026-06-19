@@ -943,6 +943,7 @@ userAnswers = [];
 
 achievements = [];
 
+
 clearInterval(timer);
 
 scoreCounter.innerHTML =
