@@ -210,3 +210,8 @@ canvas{
     top:20px;
     right:20px;
 }
+
+@keyframes pulse{}
+@keyframes shake{}
+@keyframes slideUp{}
+@keyframes fadeIn{}
