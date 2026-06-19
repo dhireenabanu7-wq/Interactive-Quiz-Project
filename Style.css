@@ -92,3 +92,21 @@ input::placeholder{
     gap:15px;
     margin-bottom:25px;
 }
+
+.category,
+.difficulty{
+    padding:15px;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+    color:white;
+    font-weight:600;
+    background:rgba(255,255,255,0.12);
+    transition:0.3s;
+}
+
+.category:hover,
+.difficulty:hover{
+    transform:translateY(-4px);
+    background:rgba(255,255,255,0.25);
+}
