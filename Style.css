@@ -43,3 +43,11 @@ body.dark{
 .hidden{
     display:none;
 }
+
+.glass-card{
+    backdrop-filter:blur(18px);
+    background:var(--glass);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:35px;
+}
