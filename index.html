@@ -1,178 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Master Pro</title>
 
-    <title>Quiz Master Pro</title>
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="container">
+<button id="themeToggle" class="theme-btn">
+🌙
+</button>
 
-        <!-- Home Screen -->
-        <div id="homeScreen">
+<div class="container">
 
-            <h1>🧠 Quiz Master Pro</h1>
+    <!-- HOME SCREEN -->
+    <div id="homeScreen" class="glass-card">
 
-            <p class="subtitle">
-                Challenge yourself and become a Quiz Legend
-            </p>
+        <h1>🧠 Quiz Master Pro</h1>
 
-            <input
-                type="text"
-                id="playerName"
-                placeholder="Enter Your Name"
-            >
+        <p class="subtitle">
+            Challenge yourself and become a Quiz Legend
+        </p>
 
-            <h3>Select Category</h3>
+        <input
+            type="text"
+            id="playerName"
+            placeholder="Enter Your Name"
+        >
 
-            <div class="category-grid">
+        <h3>Select Category</h3>
 
-                <button class="category">
-                    JavaScript
-                </button>
+        <div class="category-grid">
 
-                <button class="category">
-                    HTML & CSS
-                </button>
+            <button class="category" data-category="javascript">
+                JavaScript
+            </button>
 
-                <button class="category">
-                    Java
-                </button>
+            <button class="category" data-category="html">
+                HTML & CSS
+            </button>
 
-                <button class="category">
-                    General Knowledge
-                </button>
+            <button class="category" data-category="java">
+                Java
+            </button>
 
-            </div>
-
-            <h3>Select Difficulty</h3>
-
-            <div class="difficulty-grid">
-
-                <button class="difficulty">
-                    Easy
-                </button>
-
-                <button class="difficulty">
-                    Medium
-                </button>
-
-                <button class="difficulty">
-                    Hard
-                </button>
-
-            </div>
-
-            <button id="startQuizBtn">
-                Start Quiz 🚀
+            <button class="category" data-category="gk">
+                General Knowledge
             </button>
 
         </div>
 
-        <!-- Quiz Screen -->
-        <div id="quizScreen" class="hidden">
+        <h3>Select Difficulty</h3>
 
-            <div class="quiz-top">
+        <div class="difficulty-grid">
 
-                <div id="welcomeUser"></div>
-
-                <div id="timer">
-                    ⏱ 15
-                </div>
-
-            </div>
-
-            <div class="progress-container">
-                <div id="progressBar"></div>
-            </div>
-
-            <div class="question-info">
-
-                <span id="questionCounter"></span>
-
-                <span id="scoreCounter">
-                    Score: 0
-                </span>
-
-            </div>
-
-            <h2 id="question"></h2>
-
-            <div id="options"></div>
-
-            <button id="nextBtn">
-                Next Question →
+            <button class="difficulty" data-level="easy">
+                Easy
             </button>
 
-            <h3>Question Navigator</h3>
+            <button class="difficulty" data-level="medium">
+                Medium
+            </button>
 
-            <div id="navigator"></div>
+            <button class="difficulty" data-level="hard">
+                Hard
+            </button>
 
         </div>
 
-        <!-- Result Screen -->
-        <div id="resultScreen" class="hidden">
+        <button id="startQuizBtn" class="primary-btn">
+            Start Quiz 🚀
+        </button>
 
-            <div class="result-grid">
+    </div>
 
-                <div class="stat-card">
-                    <h2 id="finalScore"></h2>
-                </div>
+    <!-- QUIZ SCREEN -->
+    <div id="quizScreen" class="glass-card hidden">
 
-                <div class="stat-card">
-                    <h2 id="accuracy"></h2>
-                </div>
+        <div class="quiz-top">
 
-                <div class="stat-card">
-                    <h2 id="rank"></h2>
-                </div>
+            <div id="welcomeUser"></div>
 
-                <div class="stat-card">
-                    <h2 id="avgTime"></h2>
-                </div>
-
+            <div id="timer">
+                ⏱ 15
             </div>
 
-            <div id="achievementBox">
+        </div>
 
-                <h2>Achievements</h2>
+        <div class="progress-container">
+            <div id="progressBar"></div>
+        </div>
 
-                <div id="achievements"></div>
+        <div class="question-info">
 
+            <span id="questionCounter"></span>
+
+            <span id="scoreCounter">
+                Score: 0
+            </span>
+
+        </div>
+
+        <h2 id="question"></h2>
+
+        <div id="options" class="options"></div>
+
+        <button id="nextBtn" class="primary-btn">
+            Next Question →
+        </button>
+
+        <h3>Question Navigator</h3>
+
+        <div id="navigator" class="navigator"></div>
+
+    </div>
+
+    <!-- RESULT SCREEN -->
+    <div id="resultScreen" class="glass-card hidden">
+
+        <h1>🏆 Quiz Completed</h1>
+
+        <div class="result-grid">
+
+            <div class="stat-card">
+                <h2 id="finalScore"></h2>
             </div>
 
-            <canvas id="resultChart"></canvas>
-
-            <button id="restartBtn">
-                Start New Quiz
-            </button>
-
-            <div class="leaderboard">
-
-                <h2>🏅 Leaderboard</h2>
-
-                <ul id="leaderboardList"></ul>
-
+            <div class="stat-card">
+                <h2 id="accuracy"></h2>
             </div>
+
+            <div class="stat-card">
+                <h2 id="rank"></h2>
+            </div>
+
+            <div class="stat-card">
+                <h2 id="avgTime"></h2>
+            </div>
+
+        </div>
+
+        <div id="achievementBox">
+            <h2>Achievements</h2>
+
+            <div id="achievements"></div>
+        </div>
+
+        <canvas id="resultChart"></canvas>
+
+        <button id="restartBtn" class="primary-btn">
+            Start New Quiz
+        </button>
+
+        <div class="leaderboard">
+
+            <h2>🏅 Leaderboard</h2>
+
+            <ul id="leaderboardList"></ul>
 
         </div>
 
     </div>
 
-    <!-- Theme Toggle -->
-    <button id="themeToggle">
-        🌙
-    </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
 
 </body>
-
 </html>
