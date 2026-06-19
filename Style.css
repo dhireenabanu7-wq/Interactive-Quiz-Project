@@ -138,3 +138,19 @@ input::placeholder{
         #ff5e62
     );
 }
+
+.quiz-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+#timer{
+    min-width:80px;
+    text-align:center;
+    padding:10px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.15);
+    font-weight:700;
+}
